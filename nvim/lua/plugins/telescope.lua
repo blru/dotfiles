@@ -44,5 +44,11 @@ return {
             "<cmd>Telescope live_grep<cr>",
             { desc = "Find string in current working directory." }
         )
+        vim.keymap.set(
+            "n",
+            keymaps.telescope.find_buffers,
+            "<cmd>Telescope buffers sort_lastused=True<cr>",
+            { desc = "Find currently opened buffers." }
+        )
     end,
 }
