@@ -1,0 +1,17 @@
+/*
+
+# included
+!.gitignore
+!README.md
+!hypr/
+hypr/*
+!hypr/scripts/
+!hypr/wallpapers/
+hypr/wallpapers/*
+!hypr/*.conf
+!alacritty/
+!dunst/
+!nvim/
+!wofi/
+
+

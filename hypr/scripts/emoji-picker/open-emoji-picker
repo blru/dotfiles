@@ -1,0 +1,7 @@
+#!/bin/bash
+available_emojis=$(jq -r '.emojis | map(.emoji + " " + .name) | join("\n")' ~/.config/hypr/scripts/emoji-picker/emojis.json)
+
+selected_emoji_option=$(echo "$available_emojis" | wofi --show dmenu) 
+selected_emoji=$(printf %.4s "$selected_emoji_option")
+
+echo $selected_emoji | wl-copy --trim-newline
