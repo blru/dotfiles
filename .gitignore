@@ -6,8 +6,6 @@
 !hypr/
 hypr/*
 !hypr/scripts/
-!hypr/wallpapers/
-hypr/wallpapers/*
 !hypr/*.conf
 !alacritty/
 !dunst/
