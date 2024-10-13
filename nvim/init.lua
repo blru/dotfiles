@@ -12,6 +12,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
+vim.opt.laststatus = 3
 vim.cmd([[
     :setlocal spell spelllang=en_us 
     :set spell
