@@ -120,6 +120,22 @@ return {
 
             ui.setup()
 
+            -- Setup icons
+            local signs = {
+                Breakpoint = { "", "red" },
+                BreakpointCondition = { "", "red" },
+                LogPoint = { "", "red" },
+                Stopped = { "", "yellow" },
+                BreakpointRejected = { "", "gray" },
+            }
+            for type, iconColorPair in pairs(signs) do
+                local icon, color = unpack(iconColorPair)
+
+                local hl = "Dap" .. type
+                vim.fn.sign_define(hl, { text = icon, texthl = color, numhl = "" })
+            end
+
+            -- Setup adapters
             dap.adapters.codelldb = {
                 type = "server",
                 port = "${port}",
@@ -149,6 +165,7 @@ return {
                 return vim.json.decode(json.json_strip_comments(str))
             end
 
+            -- setup events
             dap.listeners.before.attach.dapui_config = function()
                 ui.open()
             end
