@@ -17,6 +17,7 @@ return {
                 "rust",
                 "markdown",
                 "cpp",
+                "json",
             },
             sync_install = false,
             highlight = { enable = true },
