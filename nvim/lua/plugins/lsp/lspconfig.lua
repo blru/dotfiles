@@ -50,25 +50,8 @@ return {
                 options.desc = "Smart rename"
                 vim.keymap.set("n", keymaps.lsp.smart_rename, vim.lsp.buf.rename, options) -- Smart rename
 
-                options.desc = "Show LSP references"
-                vim.keymap.set("n", keymaps.lsp.show_references, "<cmd>Telescope lsp_references<CR>", options) -- Show LSP references
-
                 options.desc = "Go to declaration"
                 vim.keymap.set("n", keymaps.lsp.goto_declaration, vim.lsp.buf.declaration, options) -- Go to declaration
-
-                options.desc = "Show LSP definitions"
-                vim.keymap.set("n", keymaps.lsp.show_definitions, "<cmd>Telescope lsp_definitions<CR>", options) -- Show lsp definitions
-
-                options.desc = "Show LSP implementations"
-                vim.keymap.set("n", keymaps.lsp.show_implementations, "<cmd>Telescope lsp_implementations<CR>", options) -- show lsp implementations
-
-                options.desc = "Show LSP type definitions"
-                vim.keymap.set(
-                    "n",
-                    keymaps.lsp.show_type_definitions,
-                    "<cmd>Telescope lsp_type_definitions<CR>",
-                    options
-                ) -- show lsp type definitions
 
                 options.desc = "See available code actions"
                 vim.keymap.set({ "n", "v" }, keymaps.lsp.show_available_code_actions, vim.lsp.buf.code_action, options) -- see available code actions, in visual mode will apply to selection
