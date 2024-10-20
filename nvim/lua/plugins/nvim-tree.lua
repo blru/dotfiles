@@ -37,6 +37,5 @@ return {
             "<cmd>NvimTreeFindFileToggle<CR>",
             { desc = "Toggle file explorer on current file" }
         ) -- Toggle file explorer on current file
-        -- vim.keymap.set("n", keymaps.nvim_tree.refresh, "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- Refresh file explorer
     end,
 }
