@@ -12,9 +12,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
+
+-- Spelling
+vim.opt.spell = true
+vim.opt_local.spelllang = "en_us"
 vim.cmd([[
-    :setlocal spell spelllang=en_us 
-    :set spell
     :au TermOpen * setlocal nospell
 ]])
 
