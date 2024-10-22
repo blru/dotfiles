@@ -2,7 +2,7 @@ local keymaps = require("config.keymaps")
 local toggleterm = require("toggleterm")
 local map = vim.keymap.set
 
-local clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -std=c++20"
+local clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -std=c++17"
 
 map("n", keymaps.file_specific["*"].run_single_file, function()
     toggleterm.exec(
