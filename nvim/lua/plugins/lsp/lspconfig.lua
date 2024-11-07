@@ -9,6 +9,7 @@ return {
     },
     config = function()
         local lspconfig = require("lspconfig")
+        local mason_registry = require("mason-registry")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         -- Setup icons
@@ -37,8 +38,21 @@ return {
                 },
             },
         }))
+        lspconfig.ts_ls.setup(extend_defaults({
+            init_options = {
+                plugins = {
+                    {
+                        name = "@vue/typescript-plugin",
+                        location = mason_registry.get_package("vue-language-server"):get_install_path()
+                            .. "/node_modules/@vue/language-server",
+                        languages = { "vue" },
+                    },
+                },
+            },
+            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+        }))
+        lspconfig.volar.setup(extend_defaults({}))
         lspconfig.emmet_ls.setup(extend_defaults({}))
-        lspconfig.ts_ls.setup(extend_defaults({}))
         lspconfig.clangd.setup(extend_defaults({}))
 
         -- Keymaps from https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
