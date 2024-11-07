@@ -17,7 +17,7 @@ vim.opt.linebreak = true
 -- vim.opt.spell = true
 -- vim.opt.spelllang = "en_us"
 -- vim.cmd([[
--- :au TermOpen * setlocal nospell
+--     :au TermOpen * setlocal nospell
 -- ]])
 
 -- Init commands
