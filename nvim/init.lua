@@ -12,6 +12,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
+vim.opt.pumheight = 14
 
 -- Spelling
 -- vim.opt.spell = true
