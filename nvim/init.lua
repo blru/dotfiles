@@ -14,11 +14,11 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 
 -- Spelling
-vim.opt.spell = true
-vim.opt.spelllang = "en_us"
-vim.cmd([[
-    :au TermOpen * setlocal nospell
-]])
+-- vim.opt.spell = true
+-- vim.opt.spelllang = "en_us"
+-- vim.cmd([[
+-- :au TermOpen * setlocal nospell
+-- ]])
 
 -- Init commands
 vim.keymap.set("n", keymaps.general.save_file, "<cmd>:w<CR>")
