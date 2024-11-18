@@ -38,6 +38,7 @@ return {
         find_recent = "<leader>fr", -- Find files in current working directory by name
         find_string = "<leader>fs", -- Find a string within the files in the current working directory
         find_buffers = "<leader>fb", -- Find currently opened buffers
+        find_todos = "<leader>ft", -- Find all the TODOs and other such comments within the current working directory
     },
 
     -- General lsp functionality (mostly self-explanatory)
