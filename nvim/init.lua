@@ -14,6 +14,18 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.pumheight = 14
 
+-- Hardcore mode toggle 💀 (very scary)
+vim.g.is_hardcore_enabled = false
+vim.keymap.set("n", keymaps.general.toggle_hardcore, function()
+    vim.g.is_hardcore_enabled = not vim.g.is_hardcore_enabled
+
+    if vim.g.is_hardcore_enabled then
+        vim.diagnostic.disable()
+    else
+        vim.diagnostic.enable()
+    end
+end, { desc = "Toggles hardcore mode" })
+
 -- Spelling
 -- vim.opt.spell = true
 -- vim.opt.spelllang = "en_us"
