@@ -74,7 +74,5 @@ return {
                 vim.keymap.set("n", keymaps.lsp.show_documentation, vim.lsp.buf.hover, options) -- show documentation for what is under cursor
             end,
         })
-
-        -- Language specific keymaps
     end,
 }

@@ -68,14 +68,12 @@ return {
             end, { "i", "s" }),
         })
 
-        local is_enabled = true -- For toggle keymap
-
         cmp.setup({
             completion = {
                 completeopt = "menu,menuone,preview,noselect",
             },
             enabled = function()
-                return is_enabled
+                return not vim.g.is_hardcore_enabled
             end,
             -- snippet = {},
             mapping = mapping,
@@ -91,10 +89,5 @@ return {
                 end,
             },
         })
-
-        -- toggle keymap
-        vim.keymap.set("n", keymaps.completion.toggle_completion, function()
-            is_enabled = not is_enabled
-        end, { desc = "Toggles autocomplete" })
     end,
 }

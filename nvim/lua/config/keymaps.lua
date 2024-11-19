@@ -11,6 +11,8 @@ return {
 
         save_file = "<C-s>", -- Runs :w
         toggle_wrap = "<A-z>", -- Runs :set wrap!
+
+        toggle_hardcore = "<leader>hard", -- Enables hardcore mode
     },
 
     -- Functionality to do with toggleterm
@@ -24,7 +26,6 @@ return {
         suggest_completions = "<C-Space>", -- Key used to open the cmp menu on command
         confirm_completion_or_snippet_forward = "<Tab>", -- Key used to go complete or go forward in a snippet
         snippet_backward = "<S-Tab>", -- Key used to go backward in a snippet
-        toggle_completion = "<leader>cop",
     },
 
     -- Functionality using conform
