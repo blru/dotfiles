@@ -6,9 +6,15 @@ return {
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
+        {
+            "L3MON4D3/LuaSnip",
+            version = "v2.*",
+        },
     },
     config = function()
         local cmp = require("cmp")
+        local luasnip = require("luasnip")
 
         local kind_icons = {
             Text = "",
@@ -75,10 +81,15 @@ return {
             enabled = function()
                 return not vim.g.is_hardcore_enabled
             end,
-            -- snippet = {},
+            snippet = {
+                expand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
             mapping = mapping,
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
             }),
