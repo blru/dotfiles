@@ -54,6 +54,7 @@ return {
         lspconfig.volar.setup(extend_defaults({}))
         lspconfig.emmet_ls.setup(extend_defaults({}))
         lspconfig.clangd.setup(extend_defaults({}))
+        lspconfig.cssls.setup(extend_defaults({}))
 
         -- Keymaps from https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
         vim.api.nvim_create_autocmd("LspAttach", {
