@@ -3,7 +3,8 @@ local keymaps = require("config.keymaps")
 return {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function()
+    cmd = { "ConformInfo" },
+    init = function()
         local conform = require("conform")
 
         -- Format options shared by format_on_save and format keymap
@@ -61,6 +62,6 @@ return {
         end, { desc = "In normal mode, formats the current buffer. In visual mode, formats the selection." })
 
         -- Use conform as the formatter
-        vim.o.formatexpr = [[v:lua.require("conform").formatexpr()]]
+        vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
 }
