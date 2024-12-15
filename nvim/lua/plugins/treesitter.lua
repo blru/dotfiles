@@ -18,6 +18,7 @@ return {
                 "markdown",
                 "cpp",
                 "json",
+                "http",
             },
             sync_install = false,
             highlight = { enable = true },
