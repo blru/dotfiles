@@ -59,5 +59,8 @@ return {
         vim.keymap.set({ "n", "v" }, keymaps.formatting.format_buffer, function()
             conform.format(formatOptions)
         end, { desc = "In normal mode, formats the current buffer. In visual mode, formats the selection." })
+
+        -- Use conform as the formatter
+        vim.o.formatexpr = [[v:lua.require("conform").formatexpr()]]
     end,
 }
