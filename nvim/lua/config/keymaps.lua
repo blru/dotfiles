@@ -11,6 +11,7 @@ return {
 
         save_file = "<C-s>", -- Runs :w
         toggle_wrap = "<A-z>", -- Runs :set wrap!
+        delete_buffer = "<leader>q", -- Closes the current buffer and goes to the previous buffer
 
         toggle_hardcore = "<leader>hard", -- Enables hardcore mode
     },

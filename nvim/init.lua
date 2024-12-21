@@ -34,5 +34,6 @@ end, { desc = "Toggles hardcore mode" })
 -- ]])
 
 -- Init commands
-vim.keymap.set("n", keymaps.general.save_file, "<cmd>:w<CR>")
-vim.keymap.set("n", keymaps.general.toggle_wrap, "<cmd>:set wrap!<CR>")
+vim.keymap.set("n", keymaps.general.save_file, "<cmd>w<CR>")
+vim.keymap.set("n", keymaps.general.toggle_wrap, "<cmd>set wrap!<CR>")
+vim.keymap.set("n", keymaps.general.delete_buffer, ":<C-U>bprevious <bar> bdelete #<CR>")
