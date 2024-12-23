@@ -39,7 +39,7 @@ return {
         find_files = "<leader>ff", -- Find files in current working directory by name
         find_recent = "<leader>fr", -- Find files in current working directory by name
         find_string = "<leader>fs", -- Find a string within the files in the current working directory
-        find_buffers = "<S-F>", -- Find currently opened buffers
+        find_buffers = "<S-G>", -- Find currently opened buffers
         find_todos = "<leader>ft", -- Find all the TODOs and other such comments within the current working directory
     },
 
