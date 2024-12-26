@@ -66,6 +66,11 @@ return {
         toggle_current_file = "<leader>ef",
     },
 
+    -- Functionality using trouble.nvim
+    trouble = {
+        toggle_diagnostics = "<leader>xx", -- Toggles the visibility of Trouble's diagnostics window
+    },
+
     -- Functionality using nvim-dap and other debugging stuff
     nvim_dap = {
         set_conditional_breakpoint = "<leader>dB",
