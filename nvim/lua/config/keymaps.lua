@@ -1,5 +1,5 @@
 return {
-    -- General functionality used by various plugins
+    -- General functionality used by various plugins or for nvim itself
     general = {
         -- Keys for navigating through list popup menus such as telescope, cmp and the vim command line
         popup_menu_up = "<C-k>",
@@ -11,7 +11,11 @@ return {
 
         save_file = "<C-s>", -- Runs :w
         toggle_wrap = "<A-z>", -- Runs :set wrap!
+
+        -- Buffer related
         delete_buffer = "<leader>q", -- Closes the current buffer and goes to the previous buffer
+        previous_buffer = "<C-S-Tab>", -- Goes to the previous buffer
+        next_buffer = "<C-Tab>", -- Goes to the next buffer
 
         toggle_hardcore = "<leader>hard", -- Enables hardcore mode
     },
