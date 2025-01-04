@@ -55,6 +55,7 @@ return {
         show_definitions = "gd",
         show_implementations = "gi",
         show_type_definitions = "<leader>gt",
+        show_line_diagnostics = "<leader>ge",
         show_available_code_actions = "<leader>ca", -- Show possible actions suggested by the lsp
         show_documentation = "K", -- Shows documentation for what's under the cursor
     },

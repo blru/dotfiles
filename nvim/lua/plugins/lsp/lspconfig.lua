@@ -74,6 +74,9 @@ return {
 
                 options.desc = "Show documentation for what is under cursor"
                 vim.keymap.set("n", keymaps.lsp.show_documentation, vim.lsp.buf.hover, options) -- show documentation for what is under cursor
+
+                options.desc = "Show diagnostics information for what is under cursor"
+                vim.keymap.set("n", keymaps.lsp.show_line_diagnostics, vim.diagnostic.open_float, options) -- show diagnostics under cursor
             end,
         })
     end,
