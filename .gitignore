@@ -11,7 +11,7 @@
 !/hypr/*.conf
 
 !/eww/
-!/eww/*
+!/eww/**
 /eww/old
 
 !/alacritty/
