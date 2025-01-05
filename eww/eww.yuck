@@ -1,4 +1,4 @@
-(deflisten current_workspace "sh ./scripts/workspace-polling")
+(deflisten current_workspace "./scripts/workspace-polling")
 (defvar is_time_expanded false)
 (defvar is_date_expanded false)
 
