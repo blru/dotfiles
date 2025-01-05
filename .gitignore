@@ -1,16 +1,17 @@
-/*
+*
+
+/eww/*
+/hypr/*
 
 # included
-!.gitignore
-!README.md
-!hypr/
-hypr/*
-!hypr/scripts/
-!hypr/*.conf
-!alacritty/
-!kitty/
-!dunst/
-!nvim/
-!wofi/
+!/.gitignore
+!/README.md
+!/hypr/*
+!/eww/*
+!/alacritty/
+!/kitty/
+!/dunst/
+!/nvim/
+!/wofi/
 
 
