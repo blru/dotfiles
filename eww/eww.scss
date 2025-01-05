@@ -1,0 +1,72 @@
+$background-color: #11121d;
+$border-color: rgba(70, 70, 70, 66%);
+$primary-text-color: #a0a8cd;
+$blue: #7199ee;
+$purple: #a485dd;
+$padding-0: 4px;
+$padding-1: 8px;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 11pt;
+    color: $primary-text-color;
+}
+
+tooltip {
+    &.background {
+        background-color: rgba($background-color, 0.9);
+    }
+}
+
+.background {
+    background: none;
+}
+
+.bar {
+    background-color: $background-color;
+    padding-left: $padding-1;
+}
+
+.logo {
+    all: unset;
+    padding-right: 8px; // HACK: Fixes bounding box not being correct
+
+    &:hover > label {
+        color: $blue;
+    }
+}
+
+.workspace-dot {
+    &.active {
+        color: $blue;
+    }
+}
+
+.time {
+    .text {
+        padding-right: $padding-1;
+        padding-left: $padding-0;
+        color: $background-color;
+        background: $blue;
+    }
+
+    .divider {
+        color: $blue;
+        background: $purple;
+    }
+}
+
+.date {
+    padding-left: $padding-1;
+
+    .text {
+        padding: 0 $padding-1;
+        color: $background-color;
+        background: $purple;
+    }
+
+    .divider {
+        color: $purple;
+        background: $background-color;
+    }
+}

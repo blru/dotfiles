@@ -1,13 +1,19 @@
 *
-
-/eww/*
 /hypr/*
 
 # included
-!/.gitignore
+!.gitignore
 !/README.md
-!/hypr/*
+
+!/hypr/
+!/hypr/scripts/
+!/hypr/scripts/**
+!/hypr/*.conf
+
+!/eww/
 !/eww/*
+/eww/old
+
 !/alacritty/
 !/kitty/
 !/dunst/
