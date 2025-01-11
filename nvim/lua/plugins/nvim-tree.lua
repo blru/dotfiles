@@ -27,6 +27,21 @@ return {
             git = {
                 ignore = false,
             },
+            renderer = {
+                icons = {
+                    glyphs = {
+                        git = {
+                            unstaged = "U",
+                            staged = "S",
+                            unmerged = "",
+                            renamed = "➜",
+                            untracked = "★",
+                            deleted = "",
+                            ignored = "◌",
+                        },
+                    },
+                },
+            },
         })
 
         -- Keymaps
