@@ -13,11 +13,15 @@ return {
                     local choice =
                         vim.fn.confirm(("Save changes to %q?"):format(vim.fn.bufname()), "&Yes\n&No\n&Cancel")
 
-                    if choice == 1 then -- Yes
+                    if choice == 3 then -- If cancel, don't do anything
+                        return
+                    end
+
+                    if choice == 1 then -- If yes, write to the buffer
                         vim.cmd.write()
                     end
 
-                    -- Forcibly delete buffer without saving if choice is no
+                    -- Delete buffer. If choice is no, do it forcibly
                     delete_buf(0, choice == 2)
                 else
                     delete_buf(0, false)
