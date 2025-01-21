@@ -16,7 +16,7 @@ return {
         local auto_session = require("auto-session")
 
         -- Set nvim session options
-        vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+        vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions"
 
         auto_session.setup({
             enabled = true, -- Enables/disables auto creating, saving and restoring
