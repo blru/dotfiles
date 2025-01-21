@@ -3,7 +3,7 @@ local keymaps = require("config.keymaps")
 return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false,
+    lazy = true, -- auto-session will require nvim-tree, loading it because nvim-tree changes the cwd on startup
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
