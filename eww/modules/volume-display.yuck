@@ -1,0 +1,41 @@
+(defwindow volume-display [volume is_muted]
+            :monitor 0
+            :geometry (geometry :x "4px"
+                                :y "4px"
+                                :height "24px"
+                                :anchor "top right")
+            :stacking "fg"
+            :windowtype "dock"
+            :exclusive true
+    (box
+        :orientation "h"
+        :space-evenly false
+        :spacing 8
+        (icon :is_muted is_muted)
+        (level :volume volume)
+        (percentage :volume volume)
+    )
+)
+
+(defwidget icon [is_muted]
+    (label
+        :class "icon"
+        :text {is_muted == true ? "" : ""}
+    ) 
+)
+
+(defwidget level [volume]
+    (progress
+        :value volume
+        :orientation "h"
+        :valign "center"
+        :class "level"
+    )
+)
+
+(defwidget percentage [volume]
+    (label
+        :class "percentage"
+        :text {volume + "%"}
+    )
+)

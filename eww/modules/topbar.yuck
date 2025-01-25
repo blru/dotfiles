@@ -1,0 +1,144 @@
+(deflisten current_workspace "./scripts/workspace-polling")
+(defvar is_time_expanded false)
+(defvar is_date_expanded false)
+
+(defwindow topbar
+    :monitor 0 
+    :geometry (geometry :x "0%"
+                :y "0px"
+                :width "100%"
+;                :width "${1920 - 4 * 2}px"
+                :height "24px"
+                :anchor "top center")
+    :exclusive true
+    :windowtype "dock"
+    :stacking "fg"
+    :focusable "none"
+    (main-container)
+)
+
+(defwidget main-container []
+    (centerbox
+        :class "bar"
+        :orientation "h"
+        (logo)
+        (workspace-indicator)
+        (status)
+    )
+)
+
+; logo
+(defwidget logo []
+    (button
+        :onclick "./scripts/random-wallpaper"
+        :onrightclick "./scripts/open-wallpaper-selector"
+        :halign "start"
+        :hexpand true
+        :class "logo"
+        :tooltip "Pick random wallpaper"
+        "󰣇"
+    )
+)
+
+; workspace
+(defwidget workspace-indicator []
+    (box
+        :spacing 6
+        :space-evenly false
+        :orientation "h"
+        (workspace-dot :id 1)
+        (workspace-dot :id 2)
+        (workspace-dot :id 3)
+        (workspace-dot :id 4)
+        (workspace-dot :id 5)
+        (workspace-dot :id 6)
+    )
+)
+
+(defwidget workspace-dot [id]
+      (label
+        :class "workspace-dot"
+        :text {current_workspace == id ? '' : ''}
+        :class "workspace-dot ${current_workspace == id ? 'active' : ''}"
+    ) 
+)
+
+
+; status & time/date
+(defwidget status []
+    (box 
+        :halign "end"
+        :orientation "h"
+        :spacing 0
+        :space-evenly false
+        (systray
+            :icon-size 15
+            :spacing 6
+            :orientation "h"
+        )
+        (date)
+        (time)
+    ) 
+)
+
+(defwidget date []
+    (eventbox
+        :onclick "${EWW_CMD} update is_date_expanded=${!is_date_expanded}"
+        :tooltip "Toggle expanded date"
+        (box
+            :orientation "h"
+            :space-evenly false
+            :spacing 0
+            :class "date"
+            ; HACK: Fixes divider appearing too small
+            (transform
+                :scale-y "120%"
+                :translate-y "-10%"
+                (label
+                    :class "divider"
+                    :text ""
+                    :yalign 0.5
+                    :xalign 0.5
+                    :justify "fill"
+                )
+            )
+            (label
+                :class "text"
+                :text {formattime(EWW_TIME, is_date_expanded ? "%Y/%m/%d (%a, %b %d)" : "%Y/%m/%d")}
+                :yalign 0.5
+                :xalign 0.5
+            )
+        )
+    )
+)
+
+(defwidget time []
+    (eventbox
+        :onclick "${EWW_CMD} update is_time_expanded=${!is_time_expanded}"
+        :tooltip "Toggle expanded time"
+        (box
+            :orientation "h"
+            :space-evenly false
+            :spacing 0
+            :class "time"
+            ; HACK: Fixes divider appearing too small
+            (transform
+                :scale-y "120%"
+                :translate-y "-10%"
+                (label
+                    :class "divider"
+                    :text ""
+                    :yalign 0.5
+                    :xalign 0.5
+                    :justify "fill"
+                )
+            )
+            (label
+                :class "text"
+                :text {formattime(EWW_TIME, is_time_expanded ? "%H:%M:%S" : "%H:%M")}
+                :yalign 0.5
+                :xalign 0.5
+            )
+        )
+    )
+)

@@ -1,0 +1,31 @@
+@use "../variables.scss" as *;
+
+.volume-display {
+    background: $background-color;
+    padding: $padding-1;
+
+    &.background {
+        background: none;
+    }
+
+    .icon {
+        color: $primary-text-color;
+        margin-right: 8px; // HACK: Fixes bounding box not being correct
+    }
+
+    .level {
+        & > trough {
+            min-height: 6px;
+            background: $background-color-alt;
+
+            & > progress {
+                background: $blue;
+                min-height: 6px;
+            }
+        }
+    }
+
+    .percentage {
+        color: $primary-text-color;
+    }
+}
