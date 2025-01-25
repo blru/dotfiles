@@ -31,6 +31,22 @@
         }
     }
 
+    .volume {
+        .divider {
+            color: $primary-text-color;
+            margin-left: $padding-1;
+        }
+
+        .icon {
+            color: $primary-text-color;
+            margin-right: 8px; // HACK: Fixes bounding box not being correct
+        }
+
+        .percentage {
+            color: $primary-text-color;
+        }
+    }
+
     .time {
         .text {
             padding-right: $padding-1;

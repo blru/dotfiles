@@ -64,7 +64,7 @@
 )
 
 
-; status & time/date
+; status (time/date, volume, system tray)
 (defwidget status []
     (box 
         :halign "end"
@@ -76,6 +76,7 @@
             :spacing 6
             :orientation "h"
         )
+        (volume)
         (date)
         (time)
     ) 
@@ -90,18 +91,7 @@
             :space-evenly false
             :spacing 0
             :class "date"
-            ; HACK: Fixes divider appearing too small
-            (transform
-                :scale-y "120%"
-                :translate-y "-10%"
-                (label
-                    :class "divider"
-                    :text ""
-                    :yalign 0.5
-                    :xalign 0.5
-                    :justify "fill"
-                )
-            )
+            (divider :text "")
             (label
                 :class "text"
                 :text {formattime(EWW_TIME, is_date_expanded ? "%Y/%m/%d (%a, %b %d)" : "%Y/%m/%d")}
@@ -121,24 +111,46 @@
             :space-evenly false
             :spacing 0
             :class "time"
-            ; HACK: Fixes divider appearing too small
-            (transform
-                :scale-y "120%"
-                :translate-y "-10%"
-                (label
-                    :class "divider"
-                    :text ""
-                    :yalign 0.5
-                    :xalign 0.5
-                    :justify "fill"
-                )
-            )
+            (divider :text "")
             (label
                 :class "text"
                 :text {formattime(EWW_TIME, is_time_expanded ? "%H:%M:%S" : "%H:%M")}
                 :yalign 0.5
                 :xalign 0.5
             )
+        )
+    )
+)
+
+(defwidget volume []
+    (box
+        :orientation "h"
+        :space-evenly false
+        :spacing 8
+        :class "volume"
+        (divider :text "")
+        (label
+            :class "icon"
+            :text {is_muted == true ? "" : ""}
+        ) 
+        (label
+            :class "percentage"
+            :text {volume + "%"}
+        )
+    )
+)
+
+(defwidget divider [text]
+    ; HACK: Fixes divider appearing too small
+    (transform
+        :scale-y "120%"
+        :translate-y "-10%"
+        (label
+            :class "divider"
+            :text text
+            :yalign 0.5
+            :xalign 0.5
+            :justify "fill"
         )
     )
 )

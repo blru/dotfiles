@@ -1,2 +1,5 @@
+(defvar volume ``)
+(defvar is_muted false)
+
 (include "./modules/topbar.yuck")
 (include "./modules/volume-display.yuck")
