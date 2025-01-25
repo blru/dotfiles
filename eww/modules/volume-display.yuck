@@ -1,12 +1,12 @@
 (defwindow volume-display [volume is_muted]
             :monitor 0
-            :geometry (geometry :x "4px"
-                                :y "4px"
+            :geometry (geometry :x "0px"
+                                :y "0px"
                                 :height "24px"
                                 :anchor "top right")
             :stacking "fg"
             :windowtype "dock"
-            :exclusive true
+            :exclusive false
     (box
         :orientation "h"
         :space-evenly false

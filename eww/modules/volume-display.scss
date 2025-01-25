@@ -2,7 +2,7 @@
 
 .volume-display {
     background: $background-color;
-    padding: $padding-1;
+    padding: 0 $padding-1;
 
     &.background {
         background: none;
@@ -14,13 +14,16 @@
     }
 
     .level {
-        & > trough {
+        * {
             min-height: 6px;
+            border-radius: 7px;
+        }
+
+        & > trough {
             background: $background-color-alt;
 
             & > progress {
                 background: $blue;
-                min-height: 6px;
             }
         }
     }
