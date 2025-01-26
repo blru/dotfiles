@@ -1,5 +1,15 @@
-(defvar volume ``)
-(defvar is_muted false)
+(defvar audio `
+    {
+        "SINK": {
+            "volume": 50,
+            "isMuted": false
+        },
+        "SOURCE": {
+            "volume": 50,
+            "isMuted": false
+        }
+    }
+`)
 
 (include "./modules/topbar.yuck")
 (include "./modules/volume-display.yuck")

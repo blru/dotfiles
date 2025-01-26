@@ -76,7 +76,7 @@
             :spacing 6
             :orientation "h"
         )
-        (volume)
+        (indicators)
         (date)
         (time)
     ) 
@@ -122,20 +122,32 @@
     )
 )
 
-(defwidget volume []
+(defwidget indicators []
     (box
         :orientation "h"
         :space-evenly false
         :spacing 8
-        :class "volume"
         (divider :text "")
+        (audio-indicator :device_type "SOURCE")
+        (divider :text "")
+        (audio-indicator :device_type "SINK")
+    )
+)
+
+(defwidget audio-indicator [device_type]
+    (box
+        :orientation "h"
+        :space-evenly false
+        :spacing 8
+        :class "audio-indicator"
         (label
-            :class "icon"
-            :text {is_muted == true ? "" : ""}
+            :class {(device_type == "SOURCE" && !audio[device_type].isMuted) ? '' : 'icon'}
+            :text {audio[device_type].isMuted == true ? (device_type == "SINK" ? "" : "") : (device_type == "SINK" ? "" : "󰍬")}
         ) 
         (label
             :class "percentage"
-            :text {volume + "%"}
+            :width 36
+            :text {audio[device_type].volume + "%"}
         )
     )
 )

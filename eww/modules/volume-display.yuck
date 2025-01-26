@@ -1,4 +1,4 @@
-(defwindow volume-display []
+(defwindow volume-display [device_type]
             :monitor 0
             :geometry (geometry :x "0px"
                                 :y "0px"
@@ -11,31 +11,32 @@
         :orientation "h"
         :space-evenly false
         :spacing 8
-        (icon)
-        (level)
-        (percentage)
+        (icon :device_type device_type)
+        (level :device_type device_type)
+        (percentage :device_type device_type)
     )
 )
 
-(defwidget icon []
+(defwidget icon [device_type]
     (label
         :class "icon"
-        :text {is_muted == true ? "" : ""}
+        :text {audio[device_type].isMuted == true ? (device_type == "SINK" ? "" : "") : (device_type == "SINK" ? "" : "")}
     ) 
 )
 
-(defwidget level []
+(defwidget level [device_type]
     (progress
-        :value volume
+        :value {audio[device_type].volume}
         :orientation "h"
         :valign "center"
-        :class "level"
+        :class "level ${device_type}"
     )
 )
 
-(defwidget percentage []
+(defwidget percentage [device_type]
     (label
         :class "percentage"
-        :text {volume + "%"}
+        :text {audio[device_type].volume + "%"}
+        :width 36
     )
 )

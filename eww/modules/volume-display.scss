@@ -21,9 +21,17 @@
 
         & > trough {
             background: $background-color-alt;
+        }
 
-            & > progress {
+        &.SINK {
+            progress {
                 background: $blue;
+            }
+        }
+
+        &.SOURCE {
+            progress {
+                background: $purple;
             }
         }
     }

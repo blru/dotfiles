@@ -2,5 +2,5 @@
 
 scripts_directory=~/.config/eww/scripts
 
-$scripts_directory/update-volume
-eww open volume-display --duration 2s
+$scripts_directory/update-audio-info $1
+eww open volume-display --arg device_type=$1 --duration 2s

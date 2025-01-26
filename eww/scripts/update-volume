@@ -1,7 +1,0 @@
-#!/bin/sh
-
-raw_volume_info=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
-volume=$(echo $raw_volume_info | awk '{ print $2 * 100}')
-is_muted=$(grep -q 'MUTED' <<< $raw_volume_info && echo "true" || echo "false")
-
-eww update is_muted=$is_muted volume=$volume
