@@ -42,6 +42,11 @@
             margin-right: 8px; // HACK: Fixes bounding box not being correct
         }
 
+        .icon-alt {
+            color: $primary-text-color;
+            font-size: 13pt; // HACK: Attempts to make unusually small icon look less out of place
+        }
+
         .percentage {
             color: $primary-text-color;
         }

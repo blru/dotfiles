@@ -141,7 +141,7 @@
         :spacing 8
         :class "audio-indicator"
         (label
-            :class {(device_type == "SOURCE" && !audio[device_type].isMuted) ? '' : 'icon'}
+            :class {(device_type == "SOURCE" && !audio[device_type].isMuted) ? 'icon-alt' : 'icon'}
             :text {audio[device_type].isMuted == true ? (device_type == "SINK" ? "" : "") : (device_type == "SINK" ? "" : "󰍬")}
         ) 
         (label
