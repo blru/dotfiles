@@ -31,10 +31,13 @@
         }
     }
 
-    .audio-indicator {
+    .indicators {
         .divider {
             color: $primary-text-color;
-            margin-left: $padding-1;
+
+            &.last {
+                margin-left: $padding-1;
+            }
         }
 
         .icon {

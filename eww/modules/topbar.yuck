@@ -127,7 +127,8 @@
         :orientation "h"
         :space-evenly false
         :spacing 8
-        (divider :text "")
+        :class "indicators"
+        (divider :text "" :additional_class "last")
         (audio-indicator :device_type "SOURCE")
         (divider :text "")
         (audio-indicator :device_type "SINK")
@@ -152,13 +153,13 @@
     )
 )
 
-(defwidget divider [text]
+(defwidget divider [text ?additional_class]
     ; HACK: Fixes divider appearing too small
     (transform
         :scale-y "120%"
         :translate-y "-10%"
         (label
-            :class "divider"
+            :class "divider ${additional_class}"
             :text text
             :yalign 0.5
             :xalign 0.5
