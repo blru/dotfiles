@@ -145,6 +145,12 @@ return {
                 },
             }
 
+            dap.adapters.firefox = {
+                type = "executable",
+                command = "firefox-debug-adapter",
+                args = {},
+            }
+
             dap.configurations.cpp = {
                 {
                     name = "Launch C++ Executable (Path)",
