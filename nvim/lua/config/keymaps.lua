@@ -80,6 +80,7 @@ return {
     nvim_dap = {
         set_conditional_breakpoint = "<leader>dB",
         toggle_breakpoint = "<leader>db",
+        toggle_log_breakpoint = "<leader>dn",
         continue = "<leader>dc",
         run_to_cursor = "<leader>dC",
         step_into = "<leader>di",

@@ -25,6 +25,13 @@ return {
                 desc = "Breakpoint Condition",
             },
             {
+                keymaps.nvim_dap.toggle_log_breakpoint,
+                function()
+                    require("dap").toggle_breakpoint(nil, nil, vim.fn.input("Log message: "))
+                end,
+                desc = "Toggle Breakpoint",
+            },
+            {
                 keymaps.nvim_dap.toggle_breakpoint,
                 function()
                     require("dap").toggle_breakpoint()
