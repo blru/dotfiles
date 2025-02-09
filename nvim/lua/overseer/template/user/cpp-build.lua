@@ -1,10 +1,10 @@
-local base_clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -std=c++17"
+local base_clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -std=c++23"
 
 return {
     name = "clang++ build",
     builder = function()
         local file = vim.fn.expand("%:p")
-        local outfile = vim.fn.expand("%:p:r") .. ".out"
+        local outfile = "/tmp/overseer-build.out"
 
         return {
             cmd = string.format("clang++ %s -o '%s' '%s'", base_clang_arguments, outfile, file),

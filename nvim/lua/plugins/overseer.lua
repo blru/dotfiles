@@ -29,6 +29,7 @@ return {
             strategy = {
                 "toggleterm",
                 size = 12,
+                auto_scroll = true,
                 on_create = function(term)
                     vim.cmd("startinsert!")
                     vim.api.nvim_buf_set_keymap(
@@ -40,7 +41,7 @@ return {
                     )
                 end,
             },
-            templates = { "builtin", "user.cpp-build-and-run", "user.cpp-build" },
+            templates = { "builtin", "user.cpp-build-and-run", "user.cpp-build", "user.cpp-run" },
         })
 
         vim.api.nvim_create_user_command("OverseerRestartLast", function()
