@@ -26,7 +26,21 @@ return {
         local overseer = require("overseer")
 
         overseer.setup({
-            strategy = { "toggleterm", size = 12 },
+            strategy = {
+                "toggleterm",
+                size = 12,
+                on_create = function(term)
+                    vim.cmd("startinsert!")
+                    vim.api.nvim_buf_set_keymap(
+                        term.bufnr,
+                        "n",
+                        "q",
+                        "<cmd>close<CR>",
+                        { noremap = true, silent = true }
+                    )
+                end,
+            },
+            templates = { "builtin", "user.cpp-build-and-run", "user.cpp-build" },
         })
 
         vim.api.nvim_create_user_command("OverseerRestartLast", function()

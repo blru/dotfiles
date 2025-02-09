@@ -105,8 +105,6 @@ return {
     -- File-type specific functionality
     file_specific = {
         ["*"] = {
-            run_single_file = "<leader>rr",
-            run_single_file_release = "<leader>ro",
             open_documentation_website = "<leader>rw",
         },
         rust = {},
