@@ -95,6 +95,13 @@ return {
         widgets = "<leader>dw",
     },
 
+    -- Functionality relating to  overseer.nvim
+    overseer = {
+        run = "<leader>oo",
+        toggle = "<leader>oe",
+        restart_last_task = "<leader>or",
+    },
+
     -- File-type specific functionality
     file_specific = {
         ["*"] = {
