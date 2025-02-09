@@ -13,6 +13,7 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.linebreak = true
 vim.opt.pumheight = 14
+vim.opt.cursorline = true
 
 -- Hardcore mode toggle 💀 (very scary)
 vim.g.is_hardcore_enabled = false
