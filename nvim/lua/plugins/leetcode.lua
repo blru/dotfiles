@@ -1,3 +1,6 @@
+local highlights = require("tokyodark.palette")
+local palette = require("tokyodark.palette")
+
 return {
     "kawre/leetcode.nvim",
     cmd = { "Leet" },
@@ -19,6 +22,10 @@ return {
                 before = { "#include <bits/stdc++.h>", "using namespace std;" },
                 after = "int main() {}",
             },
+        },
+        theme = {
+            normal = { fg = palette.fg },
+            alt = highlights.comment,
         },
     },
 }
