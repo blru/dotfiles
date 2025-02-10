@@ -29,8 +29,9 @@ return {
     -- Functionality to do with cmp
     completion = {
         suggest_completions = "<C-Space>", -- Key used to open the cmp menu on command
-        confirm_completion_or_snippet_forward = "<Tab>", -- Key used to go complete or go forward in a snippet
-        snippet_backward = "<S-Tab>", -- Key used to go backward in a snippet
+        complete = "<Tab>", -- Key used to do a completion
+        snippet_forward = "<C-L>", -- Key used to go forward in a snippet
+        snippet_backward = "<C-H>", -- Key used to go backward in a snippet
     },
 
     -- Functionality using conform
