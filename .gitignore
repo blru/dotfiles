@@ -1,23 +1,4 @@
 /*
-/hypr/*
-
-# included
-!.gitignore
-!/README.md
-
-!/hypr/
-!/hypr/scripts/
-!/hypr/scripts/**
-!/hypr/*.conf
-
-!/eww/
-!/eww/**
-/eww/old
-
-!/alacritty/
-!/kitty/
-!/dunst/
-!/nvim/
-!/wofi/
-
-
+!README.md
+!.config/
+!.scripts/
