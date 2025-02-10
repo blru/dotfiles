@@ -1,6 +1,6 @@
 #!/bin/sh
 
-scripts_directory=~/.config/eww/scripts
+scripts_directory=~/.scripts/eww
 
 $scripts_directory/update-audio-info $1
 eww open volume-display --arg device_type=$1 --duration 2s

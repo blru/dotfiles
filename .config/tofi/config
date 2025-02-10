@@ -1,0 +1,34 @@
+anchor = top
+width = 100%
+height = 160
+background-color = #11121d
+font = JetbrainsMono Nerd Font
+font-size = 11
+horizontal = false
+
+outline-width = 0
+border-width = 0
+result-spacing = 0
+padding-top = 0
+padding-bottom = 0
+padding-left = 0
+padding-right = 0
+exclusive-zone=0 
+
+prompt-text = "Applications "
+prompt-color = #ee6d85
+text-color = #a0a8cd
+ascii-input = true
+text-cursor = true
+text-cursor-style=block
+text-cursor-color = #a0a8cd
+text-cursor-background = #11121d
+
+num-results = 0
+selection-color = #a0a8cd
+selection-background = #212234
+selection-background-padding = 0, -1
+default-result-color = #a0a8cd
+
+drun-launch = true
+terminal = kitty

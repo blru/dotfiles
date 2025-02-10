@@ -1,4 +1,4 @@
-(deflisten current_workspace "./scripts/workspace-polling")
+(deflisten current_workspace "~/.scripts/eww/workspace-polling")
 (defvar is_time_expanded false)
 (defvar is_date_expanded false)
 
@@ -30,8 +30,8 @@
 ; logo
 (defwidget logo []
     (button
-        :onclick "./scripts/random-wallpaper"
-        :onrightclick "./scripts/open-wallpaper-selector"
+        :onclick "~/.scripts/wallpaper/random-wallpaper"
+        :onrightclick "~/.scripts/wallpaper/open-wallpaper-selector"
         :halign "start"
         :hexpand true
         :class "logo"

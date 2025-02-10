@@ -1,9 +1,9 @@
 #!/bin/sh
 
-scripts_directory=~/.config/eww/scripts
+scripts_directory=~/.scripts/wallpaper/
 wallpaper_directory=~/pictures/wallpapers
 
 available_wallpapers=$(ls -p "$wallpaper_directory" | grep -v /)
-selected_wallpaper=$(pidof wofi || (echo "$available_wallpapers" | wofi --show dmenu))
+selected_wallpaper=$(echo "$available_wallpapers" | ~/.scripts/shared/dmenu "Wallpaper" "#7199ee")
 
 $scripts_directory/change-wallpaper "${wallpaper_directory}/${selected_wallpaper}"

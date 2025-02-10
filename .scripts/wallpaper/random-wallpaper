@@ -1,6 +1,6 @@
 #!/bin/sh
 
-scripts_directory=~/.config/eww/scripts
+scripts_directory=~/.scripts/wallpaper
 wallpaper_directory=~/pictures/wallpapers
 
 chosen_wallpaper=$(ls -p "$wallpaper_directory" | grep -v / | shuf -n 1)
