@@ -103,6 +103,12 @@ return {
         restart_last_task = "<leader>or",
     },
 
+    -- Functionality for nvim-notify
+    nvim_notify = {
+        dismiss_all = "<leader>ec", -- Dismisses all notifications
+        find_notifications = "<leader>ev", -- List all notifications in telescope
+    },
+
     -- File-type specific functionality
     file_specific = {
         ["*"] = {
