@@ -129,6 +129,8 @@
         :spacing 8
         :class "indicators"
         (divider :text "" :additional_class "last")
+        (battery-indicator :visible {EWW_BATTERY != ""} :battery_info {jq(EWW_BATTERY ?: `{}`, '[.[]][0]')})
+        (divider :visible {EWW_BATTERY != ""} :text '')
         (audio-indicator :device_type "SOURCE")
         (divider :text "")
         (audio-indicator :device_type "SINK")
@@ -136,26 +138,45 @@
 )
 
 (defwidget audio-indicator [device_type]
+    (indicator
+        :icon_class {(device_type == "SOURCE" && !audio[device_type].isMuted) ? 'icon-alt' : 'icon'}
+        :icon {audio[device_type].isMuted == true ? (device_type == "SINK" ? "" : "") : (device_type == "SINK" ? "" : "󰍬")}
+        :value {audio[device_type].volume + "%"}
+    )
+)
+
+(defwidget battery-indicator [battery_info visible]
+    (indicator
+        :visible visible
+        :icon_class "icon-alt"
+        :icon {battery_info?.status == "Charging" ? "󰂄" : "󰁹"}
+        :value {battery_info?.capacity + "%"}
+    )
+)
+
+(defwidget indicator [?icon_class icon value ?visible]
     (box
+        :visible {visible ?: true}
         :orientation "h"
         :space-evenly false
         :spacing 8
-        :class "audio-indicator"
+        :class "indicator"
         (label
-            :class {(device_type == "SOURCE" && !audio[device_type].isMuted) ? 'icon-alt' : 'icon'}
-            :text {audio[device_type].isMuted == true ? (device_type == "SINK" ? "" : "") : (device_type == "SINK" ? "" : "󰍬")}
+            :class icon_class
+            :text icon
         ) 
         (label
             :class "percentage"
             :width 36
-            :text {audio[device_type].volume + "%"}
+            :text value
         )
     )
 )
 
-(defwidget divider [text ?additional_class]
+(defwidget divider [text ?additional_class ?visible]
     ; HACK: Fixes divider appearing too small
     (transform
+        :visible {visible ?: true}
         :scale-y "120%"
         :translate-y "-10%"
         (label
