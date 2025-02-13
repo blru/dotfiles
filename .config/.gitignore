@@ -1,5 +1,6 @@
 /*
 /hypr/*
+/fastfetch/*
 
 # included
 !.gitignore
@@ -14,10 +15,12 @@
 !/eww/**
 /eww/old
 
+!/fastfetch/
+!/fastfetch/config.jsonc
+
 !/alacritty/
 !/kitty/
 !/dunst/
 !/nvim/
 !/wofi/
 !/tofi/
-
