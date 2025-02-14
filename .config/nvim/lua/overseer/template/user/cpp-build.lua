@@ -1,4 +1,4 @@
-local base_clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -std=c++23"
+local base_clang_arguments = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -pedantic-errors -g -O0 -std=c++23"
 
 return {
     name = "clang++ build",
