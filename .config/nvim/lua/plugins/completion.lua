@@ -45,14 +45,14 @@ return {
             TypeParameter = "󰅲",
         }
 
-        local mapping = cmp.mapping.preset.insert({
+        local mapping = {
             [keymaps.general.popup_menu_secondary_up] = cmp.mapping.scroll_docs(-4),
             [keymaps.general.popup_menu_secondary_down] = cmp.mapping.scroll_docs(4),
             [keymaps.general.popup_menu_up] = cmp.mapping.select_prev_item(),
             [keymaps.general.popup_menu_down] = cmp.mapping.select_next_item(),
             [keymaps.completion.suggest_completions] = cmp.mapping.complete(),
             [keymaps.completion.complete] = cmp.mapping.confirm({ select = true }),
-        })
+        }
 
         cmp.setup({
             completion = {
@@ -66,7 +66,7 @@ return {
                     luasnip.lsp_expand(args.body)
                 end,
             },
-            mapping = mapping,
+            mapping = cmp.mapping.preset.insert(mapping),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
@@ -82,14 +82,20 @@ return {
         })
 
         cmp.setup.cmdline({ "/", "?" }, {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmp.mapping.preset.cmdline({
+                [keymaps.general.popup_menu_up] = { c = cmp.mapping.select_prev_item() },
+                [keymaps.general.popup_menu_down] = { c = cmp.mapping.select_next_item() },
+            }),
             sources = {
                 { name = "buffer" },
             },
         })
 
         cmp.setup.cmdline(":", {
-            mapping = cmp.mapping.preset.cmdline(),
+            mapping = cmp.mapping.preset.cmdline({
+                [keymaps.general.popup_menu_up] = { c = cmp.mapping.select_prev_item() },
+                [keymaps.general.popup_menu_down] = { c = cmp.mapping.select_next_item() },
+            }),
             sources = cmp.config.sources({
                 { name = "path" },
             }, {
