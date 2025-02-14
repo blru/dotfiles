@@ -190,6 +190,11 @@ return {
             end
             dap.listeners.before.event_exited.dapui_config = function()
                 ui.close()
+
+                -- HACK: Hack to fix nvim-tree size after debugging is finished
+                local tree = require("nvim-tree.api").tree
+                tree.toggle({ focus = false })
+                tree.toggle({ focus = false })
             end
         end,
     },
