@@ -38,8 +38,14 @@
 
     // Device Information
     "break",
-    "cpu",
-    "gpu",
+    {
+      "type": "cpu",
+      "temp": true,
+    },
+    {
+      "type": "gpu",
+      "temp": true,
+    },
     "memory",
     "swap",
     "disk",
