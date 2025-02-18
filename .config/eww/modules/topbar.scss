@@ -13,11 +13,11 @@
 
     &.bar {
         background-color: $background-color;
-        padding-left: $padding-1;
     }
 
     .logo {
         all: unset;
+        padding-left: $padding-1;
         padding-right: 8px; // HACK: Fixes bounding box not being correct
 
         &:hover > label {
