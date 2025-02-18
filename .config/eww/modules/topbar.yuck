@@ -30,8 +30,8 @@
 ; logo
 (defwidget logo []
     (button
-        :onclick "~/.scripts/wallpaper/random-wallpaper"
-        :onrightclick "~/.scripts/wallpaper/open-wallpaper-selector"
+        :onclick "~/.scripts/eww/open-general-menu"
+        :onrightclick "~/.scripts/wallpaper/random-wallpaper"
         :halign "start"
         :hexpand true
         :class "logo"

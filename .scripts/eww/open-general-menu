@@ -1,0 +1,36 @@
+#!/bin/bash
+
+scripts_directory=~/.scripts/shared
+
+# Options
+poweroff_option=" Power off"
+reboot_option=" Reboot"
+suspend_option=" Suspend"
+hibernate_option=" Hibernate"
+
+# Get user selection
+selection=$(
+    printf "%s\n" \
+    "$poweroff_option" \
+    "$reboot_option" \
+    "$suspend_option" \
+    "$hibernate_option" \
+    | $scripts_directory/dmenu "General Menu" "#95c561"
+)
+
+case $selection in
+    $poweroff_option)
+        systemctl poweroff
+        ;;
+    $reboot_option)
+        systemctl reboot
+        ;;
+    $suspend_option)
+        systemctl suspend
+        ;;
+    $hibernate_option)
+        systemctl hibernate
+        ;;
+    *)
+        ;;
+esac
