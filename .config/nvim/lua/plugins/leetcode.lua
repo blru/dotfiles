@@ -1,5 +1,4 @@
-local highlights = require("tokyodark.palette")
-local palette = require("tokyodark.palette")
+local palette = require("mellow.colors").dark
 
 return {
     "kawre/leetcode.nvim",
@@ -25,7 +24,7 @@ return {
         },
         theme = {
             normal = { fg = palette.fg },
-            alt = highlights.comment,
+            alt = palette.gray05,
         },
     },
 }
