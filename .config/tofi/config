@@ -1,7 +1,7 @@
 anchor = top
 width = 100%
 height = 160
-background-color = #11121d
+background-color = #161617
 font = JetbrainsMono Nerd Font
 font-size = 11
 horizontal = false
@@ -17,19 +17,19 @@ padding-right = 0
 exclusive-zone = 0 
 
 prompt-text = "Applications "
-prompt-color = #ee6d85
-text-color = #a0a8cd
+prompt-color = #ea83a5
+text-color = #c9c7cd
 ascii-input = true
 text-cursor = true
 text-cursor-style=block
-text-cursor-color = #a0a8cd
-text-cursor-background = #11121d
+text-cursor-color = #c9c7cd
+text-cursor-background = #161617
 
 num-results = 0
-selection-color = #a0a8cd
-selection-background = #212234
+selection-color = #c9c7cd
+selection-background = #2a2a2d
 selection-background-padding = 0, -1
-default-result-color = #a0a8cd
+default-result-color = #c9c7cd
 
 drun-launch = true
 terminal = kitty

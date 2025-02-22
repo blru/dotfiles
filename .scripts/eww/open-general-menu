@@ -15,7 +15,7 @@ selection=$(
     "$reboot_option" \
     "$suspend_option" \
     "$hibernate_option" \
-    | $scripts_directory/dmenu "General Menu" "#95c561"
+    | $scripts_directory/dmenu "General Menu" "#90b99f"
 )
 
 case $selection in

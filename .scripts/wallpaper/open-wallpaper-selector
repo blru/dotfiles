@@ -4,7 +4,7 @@ scripts_directory=~/.scripts/wallpaper
 wallpaper_directory=$1
 
 available_wallpapers=$(ls -p "$wallpaper_directory" | cat)
-selected_wallpaper=$(echo "$available_wallpapers" | ~/.scripts/shared/dmenu "Wallpapers" "#7199ee")
+selected_wallpaper=$(echo "$available_wallpapers" | ~/.scripts/shared/dmenu "Wallpapers" "#aca1cf")
 
 if [ $(echo $selected_wallpaper | grep -c '/') -eq "0" ]; then
     $scripts_directory/change-wallpaper "${wallpaper_directory}/${selected_wallpaper}"
