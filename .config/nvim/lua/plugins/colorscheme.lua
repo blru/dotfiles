@@ -9,6 +9,8 @@ return {
             ["IblIndent"] = { fg = palette.gray03 },
             ["DiagnosticHint"] = { fg = palette.red },
             ["DiagnosticError"] = { fg = palette.cyan },
+            ["DiagnosticUnderlineHint"] = { fg = palette.red, underline = true },
+            ["DiagnosticUnderlineError"] = { fg = palette.cyan, underline = true },
         }
 
         vim.cmd(":colorscheme mellow")
