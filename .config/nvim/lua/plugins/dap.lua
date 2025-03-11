@@ -16,6 +16,7 @@ return {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
         },
+        lazy = true,
         keys = {
             {
                 keymaps.nvim_dap.set_conditional_breakpoint,

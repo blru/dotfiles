@@ -3,7 +3,6 @@ local keymaps = require("config.keymaps")
 return {
     "L3MON4D3/LuaSnip",
     version = "v2.*",
-    lazy = false,
     keys = {
         {
             keymaps.completion.snippet_forward,

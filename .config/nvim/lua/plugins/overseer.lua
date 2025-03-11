@@ -2,8 +2,7 @@ local keymaps = require("config.keymaps")
 
 return {
     "stevearc/overseer.nvim",
-    -- TODO: Make it lazy load
-    lazy = false,
+    lazy = true,
     keys = {
         {
             keymaps.overseer.run,
