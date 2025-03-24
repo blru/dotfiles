@@ -1,0 +1,4 @@
+#!/bin/bash
+
+notify-send -a peaclock "timer complete";
+pw-play ~/.config/peaclock/ringtone.mp3
