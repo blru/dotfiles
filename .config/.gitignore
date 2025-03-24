@@ -1,6 +1,7 @@
 /*
 /hypr/*
 /fastfetch/*
+/peaclock/*
 
 # included
 !.gitignore
@@ -17,6 +18,9 @@
 
 !/fastfetch/
 !/fastfetch/config.jsonc
+
+!/peaclock/
+!/peaclock/config
 
 !/alacritty/
 !/kitty/
