@@ -3,7 +3,7 @@
 .topbar {
     tooltip {
         &.background {
-            background-color: rgba($background-color, 0.9);
+            background-color: rgba($background-primary, 0.9);
         }
     }
 
@@ -12,7 +12,7 @@
     }
 
     &.bar {
-        background-color: $background-color;
+        background-color: $background-primary;
     }
 
     .logo {
@@ -55,11 +55,27 @@
         }
     }
 
+    .notifications {
+        margin-left: $padding-1;
+
+        .icon {
+            color: $primary-text-color;
+            background: $background-secondary;
+            padding-left: $padding-1;
+            padding-right: $padding-2;
+        }
+
+        .divider {
+            color: $background-secondary;
+            background: $background-primary;
+        }
+    }
+
     .time {
         .text {
             padding-right: $padding-1;
             padding-left: $padding-0;
-            color: $background-color;
+            color: $background-primary;
             background: $blue;
         }
 
@@ -70,17 +86,15 @@
     }
 
     .date {
-        padding-left: $padding-1;
-
         .text {
             padding: 0 $padding-1;
-            color: $background-color;
+            color: $background-primary;
             background: $purple;
         }
 
         .divider {
             color: $purple;
-            background: $background-color;
+            background: $background-primary-alt;
         }
     }
 }

@@ -77,9 +77,30 @@
             :orientation "h"
         )
         (indicators)
+        (notifications)
         (date)
         (time)
     ) 
+)
+
+(defwidget notifications []
+    (eventbox
+        :onclick "swaync-client --toggle-panel"
+        :tooltip "Open notification center"
+        (box
+            :orientation "h"
+            :space-evenly false
+            :spacing 0
+            :class "notifications"
+            (divider :text "")
+            (label
+                :class "icon"
+                :text ""
+                :yalign 0.5
+                :xalign 0.5
+            )
+        )
+    )
 )
 
 (defwidget date []
