@@ -13,11 +13,22 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         -- Setup icons
-        local signs = { Error = "", Warn = "", Hint = "󰠠", Info = "" }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
+        vim.diagnostic.config({
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = "",
+                    [vim.diagnostic.severity.WARN] = "",
+                    [vim.diagnostic.severity.INFO] = "󰠠",
+                    [vim.diagnostic.severity.HINT] = "",
+                },
+                texthl = {
+                    [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+                    [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+                    [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+                    [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+                },
+            },
+        })
 
         -- Setup language servers
         local capabilities = cmp_nvim_lsp.default_capabilities()

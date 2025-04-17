@@ -69,6 +69,7 @@ return {
             mapping = cmp.mapping.preset.insert(mapping),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "render-markdown" },
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
