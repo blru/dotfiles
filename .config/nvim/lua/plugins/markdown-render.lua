@@ -5,7 +5,7 @@ return {
     ---@type render.md.UserConfig
     ft = { "markdown" },
     opts = {
-        render_modes = { "n", "v", "V", "i", "R", "t", "no" },
+        render_modes = { "n", "v", "V", "i", "R", "t", "no", "c" },
         heading = {},
         sign = { enabled = false },
         html = {

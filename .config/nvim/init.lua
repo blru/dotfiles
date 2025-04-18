@@ -15,6 +15,14 @@ vim.opt.linebreak = true
 vim.opt.pumheight = 14
 vim.opt.cursorline = true
 vim.opt.background = "dark"
+vim.o.undofile = true
+
+-- Custom file types
+vim.filetype.add({
+    extension = {
+        mdx = "markdown",
+    },
+})
 
 -- Hardcore mode toggle 💀 (very scary)
 vim.g.is_hardcore_enabled = false
@@ -29,11 +37,11 @@ vim.keymap.set("n", keymaps.general.toggle_hardcore, function()
 end, { desc = "Toggles hardcore mode" })
 
 -- Spelling
--- vim.opt.spell = true
--- vim.opt.spelllang = "en_us"
--- vim.cmd([[
---     :au TermOpen * setlocal nospell
--- ]])
+vim.opt.spell = false
+vim.opt.spelllang = "en_us"
+vim.cmd([[
+    :au TermOpen * setlocal nospell
+]])
 
 -- Init commands
 vim.keymap.set("n", keymaps.general.save_file, "<cmd>up<CR>")
