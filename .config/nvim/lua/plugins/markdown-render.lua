@@ -13,5 +13,8 @@ return {
                 conceal = false,
             },
         },
+        quote = {
+            repeat_linebreak = true,
+        },
     },
 }
