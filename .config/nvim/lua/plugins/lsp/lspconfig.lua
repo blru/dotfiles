@@ -68,6 +68,7 @@ return {
         lspconfig.cssls.setup(extend_defaults({}))
         lspconfig.html.setup(extend_defaults({}))
         lspconfig.jsonls.setup(extend_defaults({}))
+        lspconfig.pyright.setup(extend_defaults({}))
 
         -- Keymaps from https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
         vim.api.nvim_create_autocmd("LspAttach", {
