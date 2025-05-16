@@ -153,7 +153,7 @@ style inactive-fg clear
 style colon-fg clear
 
 # set the style of the background used to draw active blocks in the clock
-style active-bg yellow bright
+style active-bg blue bright
 
 # set the style of the background used to draw inactive blocks in the clock
 style inactive-bg clear
