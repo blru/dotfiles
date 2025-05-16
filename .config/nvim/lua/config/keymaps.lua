@@ -109,6 +109,11 @@ return {
         find_notifications = "<leader>ev", -- List all notifications in telescope
     },
 
+    -- Functionality for ccc.nvim
+    ccc = {
+        open_picker = "<leader>cc",
+    },
+
     -- File-type specific functionality
     file_specific = {
         ["*"] = {
