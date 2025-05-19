@@ -28,6 +28,8 @@ return {
                     [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
                 },
             },
+            severity_sort = true,
+            virtual_text = true,
         })
 
         -- Setup language servers
@@ -62,6 +64,7 @@ return {
             },
             filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         }))
+        lspconfig.luau_lsp.setup(extend_defaults({}))
         lspconfig.volar.setup(extend_defaults({}))
         lspconfig.emmet_ls.setup(extend_defaults({}))
         lspconfig.clangd.setup(extend_defaults({}))
