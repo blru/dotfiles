@@ -42,9 +42,9 @@ return {
     -- Functionality using telescope
     telescope = {
         find_files = "<C-P>", -- Find files in current working directory by name
-        find_recent = "<leader>fr", -- Find files in current working directory by name
-        find_string = "<leader>fs", -- Find a string within the files in the current working directory
         find_buffers = "<C-G>", -- Find currently opened buffers
+        find_string = "<leader>fs", -- Find a string within the files in the current working directory
+        find_recent = "<leader>fr", -- Find files in current working directory by name
         find_todos = "<leader>ft", -- Find all the TODOs and other such comments within the current working directory
     },
 
@@ -112,6 +112,11 @@ return {
     -- Functionality for ccc.nvim
     ccc = {
         open_picker = "<leader>cc",
+    },
+
+    -- Functionality for aerial.nvim
+    aerial = {
+        toggle_nav = "<C-S-G>",
     },
 
     -- File-type specific functionality
