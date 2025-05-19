@@ -8,8 +8,6 @@ return {
         "mrcjkb/rustaceanvim",
     },
     config = function()
-        local lspconfig = require("lspconfig")
-        local mason_registry = require("mason-registry")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
         -- Setup icons
@@ -33,16 +31,20 @@ return {
         })
 
         -- Setup language servers
-        local capabilities = cmp_nvim_lsp.default_capabilities()
+        vim.lsp.config("*", {
+            capabilities = cmp_nvim_lsp.default_capabilities(),
+        })
 
-        local function extend_defaults(options)
-            options.capabilities = capabilities
+        local function configure_lsp(name, config)
+            if config == nil then
+                config = {}
+            end
 
-            return options
+            vim.lsp.config(name, config)
+            vim.lsp.enable(name)
         end
 
-        -- TODO: Figure out how to make it so that only installed LSPs are configured
-        lspconfig.lua_ls.setup(extend_defaults({
+        configure_lsp("lua_ls", {
             settings = {
                 Lua = {
                     diagnostics = {
@@ -50,29 +52,29 @@ return {
                     },
                 },
             },
-        }))
-        lspconfig.ts_ls.setup(extend_defaults({
+        })
+        configure_lsp("ts_ls", {
             init_options = {
                 plugins = {
-                    {
-                        name = "@vue/typescript-plugin",
-                        location = mason_registry.get_package("vue-language-server"):get_install_path()
-                            .. "/node_modules/@vue/language-server",
-                        languages = { "vue" },
-                    },
+                    -- TODO: Add vue language server support
+                    -- {
+                    --     name = "@vue/typescript-plugin",
+                    --     location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+                    --     languages = { "javascript", "typescript", "vue" },
+                    -- },
                 },
             },
             filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-        }))
-        lspconfig.luau_lsp.setup(extend_defaults({}))
-        lspconfig.volar.setup(extend_defaults({}))
-        lspconfig.emmet_ls.setup(extend_defaults({}))
-        lspconfig.clangd.setup(extend_defaults({}))
-        lspconfig.cssls.setup(extend_defaults({}))
-        lspconfig.html.setup(extend_defaults({}))
-        lspconfig.jsonls.setup(extend_defaults({}))
-        lspconfig.pyright.setup(extend_defaults({}))
-        lspconfig.astro.setup(extend_defaults({}))
+        })
+        configure_lsp("luau_lsp")
+        configure_lsp("volar")
+        configure_lsp("emmet_ls")
+        configure_lsp("clangd")
+        configure_lsp("cssls")
+        configure_lsp("html")
+        configure_lsp("jsonls")
+        configure_lsp("pyright")
+        configure_lsp("astro")
 
         -- Keymaps from https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
         vim.api.nvim_create_autocmd("LspAttach", {

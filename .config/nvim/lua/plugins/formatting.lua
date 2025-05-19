@@ -20,6 +20,7 @@ return {
             formatters_by_ft = {
                 -- Lua
                 lua = { "stylua" },
+                luau = { "stylua" },
 
                 -- JS/TS
                 javascript = { "prettier" },
