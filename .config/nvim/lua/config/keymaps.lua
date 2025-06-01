@@ -17,6 +17,10 @@ return {
         previous_buffer = "<C-S-Tab>", -- Goes to the previous buffer
         next_buffer = "<C-Tab>", -- Goes to the next buffer
 
+        -- Line movement similar to other editors
+        move_lines_up = "<A-k>",
+        move_lines_down = "<A-j>",
+
         toggle_hardcore = "<leader>hard", -- Enables hardcore mode
     },
 
