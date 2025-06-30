@@ -6,6 +6,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "mrcjkb/rustaceanvim",
+        "lopi-py/luau-lsp.nvim",
     },
     config = function()
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -66,8 +67,7 @@ return {
             },
             filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         })
-        configure_lsp("luau_lsp")
-        configure_lsp("volar")
+        -- configure_lsp("volar")
         configure_lsp("emmet_ls")
         configure_lsp("clangd")
         configure_lsp("cssls")

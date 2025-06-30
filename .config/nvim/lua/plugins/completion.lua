@@ -1,4 +1,5 @@
 local keymaps = require("config.keymaps")
+local kind_icons = require("config.kind-icons")
 
 return {
     "hrsh7th/nvim-cmp",
@@ -8,42 +9,11 @@ return {
         "hrsh7th/cmp-path",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-cmdline",
-        {
-            "L3MON4D3/LuaSnip",
-            version = "v2.*",
-        },
+        "L3MON4D3/LuaSnip",
     },
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-
-        local kind_icons = {
-            Text = "",
-            Method = "󰆧",
-            Function = "󰊕",
-            Constructor = "",
-            Field = "󰇽",
-            Variable = "󰂡",
-            Class = "󰠱",
-            Interface = "",
-            Module = "",
-            Property = "󰜢",
-            Unit = "",
-            Value = "󰎠",
-            Enum = "",
-            Keyword = "󰌋",
-            Snippet = "",
-            Color = "󰏘",
-            File = "󰈙",
-            Reference = "",
-            Folder = "󰉋",
-            EnumMember = "",
-            Constant = "󰏿",
-            Struct = "",
-            Event = "",
-            Operator = "󰆕",
-            TypeParameter = "󰅲",
-        }
 
         local mapping = {
             [keymaps.general.popup_menu_secondary_up] = cmp.mapping.scroll_docs(-4),

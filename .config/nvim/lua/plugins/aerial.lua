@@ -1,4 +1,5 @@
 local keymaps = require("config.keymaps")
+local kind_icons = require("config.kind-icons")
 
 return {
     "stevearc/aerial.nvim",
@@ -64,32 +65,6 @@ return {
             ["zx"] = "actions.tree_sync_folds",
             ["zX"] = "actions.tree_sync_folds",
         },
-        icons = {
-            Text = "",
-            Method = "󰆧",
-            Function = "󰊕",
-            Constructor = "",
-            Field = "󰇽",
-            Variable = "󰂡",
-            Class = "󰠱",
-            Interface = "",
-            Module = "",
-            Property = "󰜢",
-            Unit = "",
-            Value = "󰎠",
-            Enum = "",
-            Keyword = "󰌋",
-            Snippet = "",
-            Color = "󰏘",
-            File = "󰈙",
-            Reference = "",
-            Folder = "󰉋",
-            EnumMember = "",
-            Constant = "󰏿",
-            Struct = "",
-            Event = "",
-            Operator = "󰆕",
-            TypeParameter = "󰅲",
-        },
+        icons = kind_icons,
     },
 }
