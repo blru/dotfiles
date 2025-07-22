@@ -23,8 +23,10 @@ return {
         notify.setup({
             timeout = 1000,
             render = "minimal",
+            level = vim.log.levels.WARN,
             max_width = 36,
             max_height = 3,
+            top_down = false,
         })
 
         vim.notify = notify
