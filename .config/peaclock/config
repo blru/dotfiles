@@ -81,7 +81,7 @@ stopwatch start
 
 # set the timers initial value
 # clear, stop, start, 00h:00m:00s
-timer 10m:0s
+timer 25m:0s
 
 # set the string value to be executed by a shell upon timer completion,
 # an empty string clears the value
