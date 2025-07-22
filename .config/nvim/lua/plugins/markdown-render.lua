@@ -4,6 +4,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     ft = { "markdown" },
+    enabled = false,
     opts = {
         render_modes = { "n", "v", "V", "i", "R", "t", "no", "c" },
         heading = {},
