@@ -38,6 +38,7 @@ end, { desc = "Toggles hardcore mode" })
 
 -- Spelling
 vim.opt.spell = false
+vim.opt.spelloptions = "camel"
 vim.opt.spelllang = "en_us"
 vim.cmd([[
     :au TermOpen * setlocal nospell
