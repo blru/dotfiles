@@ -129,5 +129,8 @@ return {
             open_documentation_website = "<leader>rw",
         },
         rust = {},
+        markdown = {
+            open_preview = "<leader>pv",
+        },
     },
 }
