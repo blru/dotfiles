@@ -54,7 +54,12 @@ return {
                 markdown = { "prettier" },
                 ["markdown.mdx"] = { "prettier" },
             },
-            formatters = {},
+            formatters = {
+                prettier = {
+                    command = "prettier",
+                    prepend_args = { "--tab-width", "4" },
+                },
+            },
         })
 
         -- Format keymap
