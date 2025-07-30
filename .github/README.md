@@ -1,5 +1,8 @@
 # Dotfiles
 
+> [!NOTE]
+> These dotfiles are for my [Arch Linux](https://archlinux.org/) installation. See [this repository](https://github.com/blru/config-nix) for my [NixOS](https://nixos.org/) configuration.
+
 These dotfiles **will not** work on most systems without modification and or installation of dependencies.
 
 ## Notes
