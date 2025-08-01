@@ -1,7 +1,7 @@
 # Dotfiles
 
 > [!NOTE]
-> These are my old dotfiles, for my new ones please see [dotfiles-v2](https://github.com/blru/dotfiles-v2).
+> These are my old dotfiles. For my new ones, please see [dotfiles-v2](https://github.com/blru/dotfiles-v2).
 
 These dotfiles **will not** work on most systems without modification and or installation of dependencies.
 
